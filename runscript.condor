@@ -1,0 +1,17 @@
+# condor submit file for group analysis
+Universe=vanilla
+getenv=True
+Executable=/drive/scriptsFolder/randomise_forCondor.bash
+Output=logs/randomise.out
+Error=logs/randomise.err
+Log=logs/randomise.log
+
+request_memory = 2000
+
+# randomise input file should be a nifti (.nii or .nii.gz)
+Arguments=4DinputFileName1 designFileName1
+Queue
+Arguments=4DinputFileName2 designFileName1
+Queue
+Arguments=4DinputFileName2 designFileName2
+Queue
